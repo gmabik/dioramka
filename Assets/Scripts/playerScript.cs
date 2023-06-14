@@ -15,6 +15,8 @@ public class playerScript : MonoBehaviour
     [SerializeField] private float sensitivity = 5;
     [SerializeField] private Camera mainCam;
     private CharacterController controller;
+    [Header("Effects")]
+    [SerializeField] private GameObject slashSpawnPos;
     [Header("Weapons")]
     [SerializeField] private GameObject katana;
     [SerializeField] private GameObject dagger;
@@ -59,6 +61,12 @@ public class playerScript : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+    public void AddSlashEffect(GameObject effect)
+    {
+        GameObject slash = Instantiate(effect, slashSpawnPos.transform.position, slashSpawnPos.transform.rotation);
+        Destroy(slash, 1f);
+    }
+
     public void UnActiveSceneDagger()
     {
         dagger_scene.SetActive(false);
@@ -74,5 +82,12 @@ public class playerScript : MonoBehaviour
         GameObject dagger2GO = Instantiate(dagger2, dagger2_spawn.transform.position, dagger2_spawn.transform.rotation);
         GameObject dagger3GO = Instantiate(dagger3, dagger3_spawn.transform.position, dagger3_spawn.transform.rotation);
         GameObject daggersEffect = Instantiate(daggers_effect, dagger.transform.position, daggers_effect.transform.rotation);
+    }
+
+    public void AnimEnd(string animBoolName)
+    {
+        GetComponent<Animator>().applyRootMotion = true;
+        GetComponent<Animator>().SetBool(animBoolName, false);
+        isAnimPlaying = false;
     }
 }

@@ -9,24 +9,28 @@ public class weapon_trigger : MonoBehaviour
     [SerializeField] private string animBoolName;
     [Header("Text")]
     [SerializeField] private GameObject interactText;
+    private bool canTrigger;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player") return;
         interactText.SetActive(true);
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            playerAnim.applyRootMotion = false;
-            playerAnim.SetBool(animBoolName, true);
-            playerAnim.gameObject.GetComponent<playerScript>().isAnimPlaying = true;
-        } 
+        canTrigger = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag != "Player") return;
         interactText.SetActive(false);
+        canTrigger = false;
+    }
+
+    private void Update()
+    {
+        if (canTrigger && Input.GetMouseButtonDown(0))
+        {
+            playerAnim.applyRootMotion = false;
+            playerAnim.SetBool(animBoolName, true);
+            playerAnim.gameObject.GetComponent<playerScript>().isAnimPlaying = true;
+        }
     }
 }
