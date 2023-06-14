@@ -64,7 +64,7 @@ public class playerScript : MonoBehaviour
     public void AddSlashEffect(GameObject effect)
     {
         GameObject slash = Instantiate(effect, slashSpawnPos.transform.position, slashSpawnPos.transform.rotation);
-        Destroy(slash, 1f);
+        Destroy(slash, 0.7f);
     }
 
     public void UnActiveSceneDagger()
