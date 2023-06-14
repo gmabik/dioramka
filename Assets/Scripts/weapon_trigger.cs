@@ -6,7 +6,7 @@ public class weapon_trigger : MonoBehaviour
 {
     [Header("Animations")]
     [SerializeField] private Animator playerAnim;
-    [SerializeField] private string animName;
+    [SerializeField] private string animBoolName;
     [Header("Text")]
     [SerializeField] private GameObject interactText;
     private void OnTriggerEnter(Collider other)
@@ -18,7 +18,9 @@ public class weapon_trigger : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            print("click");
+            playerAnim.applyRootMotion = false;
+            playerAnim.SetBool(animBoolName, true);
+            playerAnim.gameObject.GetComponent<playerScript>().isAnimPlaying = true;
         } 
     }
 
