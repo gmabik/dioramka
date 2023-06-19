@@ -90,8 +90,6 @@ public class playerScript : MonoBehaviour
         katana_scene.SetActive(true);
     }
 
-
-
     public void TripleDagger()
     {
         GameObject dagger2GO = Instantiate(dagger2, dagger2_spawn.transform.position, dagger2_spawn.transform.rotation);
