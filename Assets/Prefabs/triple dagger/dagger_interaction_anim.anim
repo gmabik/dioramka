@@ -420,15 +420,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 7.366667
         value: {x: 6.39, y: 4.23, z: 12.23}
-        inSlope: {x: 0, y: -1.393671, z: 0}
-        outSlope: {x: 0, y: -1.393671, z: 0}
+        inSlope: {x: 2.3810127, y: -1.2531646, z: 0}
+        outSlope: {x: 2.3810127, y: -1.2531646, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 8
-        value: {x: 6.17, y: 2.58, z: 12.23}
+        value: {x: 10.48, y: 2.95, z: 12.89}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -797,15 +797,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 7.366667
         value: 6.39
-        inSlope: 0
-        outSlope: 0
+        inSlope: 2.3810127
+        outSlope: 2.3810127
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 8
-        value: 6.17
+        value: 10.48
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -861,15 +861,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 7.366667
         value: 4.23
-        inSlope: -1.393671
-        outSlope: -1.393671
+        inSlope: -1.2531646
+        outSlope: -1.2531646
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 8
-        value: 2.58
+        value: 2.95
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -933,7 +933,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 8
-        value: 12.23
+        value: 12.89
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2780,7 +2780,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: 
+    path: dagger
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2790,17 +2790,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: 
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: 
+    path: dagger
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2819,8 +2809,18 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: dagger
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2830,7 +2830,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: dagger
+    path: 
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
@@ -2878,7 +2878,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 7.983333
+  - time: 8
     functionName: AnimEnd
     data: dagger_anim_start
     objectReferenceParameter: {fileID: 0}

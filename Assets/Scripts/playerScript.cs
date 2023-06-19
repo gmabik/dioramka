@@ -19,9 +19,12 @@ public class playerScript : MonoBehaviour
     [SerializeField] private GameObject slashSpawnPos;
     [Header("Weapons")]
     [SerializeField] private GameObject katana;
+    [SerializeField] private GameObject sheath;
+    [SerializeField] private GameObject katana_scene;
     [SerializeField] private GameObject dagger;
     [SerializeField] private GameObject dagger_scene;
     [SerializeField] private GameObject wand;
+    [SerializeField] private GameObject wand_scene;
     public bool isAnimPlaying;
     [Header("TripleDagger")]
     [SerializeField] private GameObject dagger2;
@@ -64,7 +67,7 @@ public class playerScript : MonoBehaviour
     public void AddSlashEffect(GameObject effect)
     {
         GameObject slash = Instantiate(effect, slashSpawnPos.transform.position, slashSpawnPos.transform.rotation);
-        Destroy(slash, 0.7f);
+        Destroy(slash, 1f);
     }
 
     public void UnActiveSceneDagger()
@@ -76,6 +79,18 @@ public class playerScript : MonoBehaviour
     {
         dagger_scene.SetActive(true);
     }
+
+    public void UnActiveSceneKatana()
+    {
+        katana_scene.SetActive(false);
+    }
+
+    public void KatanaChange()
+    {
+        katana_scene.SetActive(true);
+    }
+
+
 
     public void TripleDagger()
     {
