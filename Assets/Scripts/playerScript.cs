@@ -66,7 +66,7 @@ public class playerScript : MonoBehaviour
 
     public void AddSlashEffect(GameObject effect)
     {
-        GameObject slash = Instantiate(effect, slashSpawnPos.transform.position, slashSpawnPos.transform.rotation);
+        GameObject slash = Instantiate(effect, effect.transform.position + slashSpawnPos.transform.position, effect.transform.rotation);
         Destroy(slash, 1f);
     }
 

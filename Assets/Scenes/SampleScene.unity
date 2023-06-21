@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -504,6 +504,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
   m_PrefabInstance: {fileID: 520653608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &527127418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1132289929033786585, guid: d4ea9096f6f79e34aab35de1e97fed8b, type: 3}
+  m_PrefabInstance: {fileID: 1795114526}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &548272817
 PrefabInstance:
@@ -1404,8 +1409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df391e6b89b5edf48b2b88bf7a2f567a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnim: {fileID: 0}
-  animBoolName: 
+  playerAnim: {fileID: 1935353987}
+  animBoolName: katana_anim_start
   interactText: {fileID: 1496972851}
 --- !u!1001 &1127351270
 PrefabInstance:
@@ -1996,6 +2001,11 @@ Transform:
   m_Father: {fileID: 1935353985}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1414867418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5978356061239144983, guid: 997ec363fb3792b4eb6728e86e76f9ee, type: 3}
+  m_PrefabInstance: {fileID: 2119038416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1419515949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,15 +2672,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.91
+      value: -28.270435
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.06897068
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.98
+      value: -4.9800005
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2678,15 +2688,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3691592785065417714, guid: a179d4ba800b87b4997ec6c41491d4f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2933,9 +2943,9 @@ MonoBehaviour:
   sensitivity: 5
   mainCam: {fileID: 963194227}
   slashSpawnPos: {fileID: 1410521651}
-  katana: {fileID: 0}
-  sheath: {fileID: 0}
-  katana_scene: {fileID: 0}
+  katana: {fileID: 527127418}
+  sheath: {fileID: 1414867418}
+  katana_scene: {fileID: 1227743585}
   dagger: {fileID: 1879321607}
   dagger_scene: {fileID: 725614275}
   wand: {fileID: 1198837368}
