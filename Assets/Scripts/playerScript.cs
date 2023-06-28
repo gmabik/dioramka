@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class playerScript : MonoBehaviour
@@ -25,6 +26,7 @@ public class playerScript : MonoBehaviour
     [SerializeField] private GameObject dagger_scene;
     [SerializeField] private GameObject wand;
     [SerializeField] private GameObject wand_scene;
+    [SerializeField] private GameObject training_dummy;
     public bool isAnimPlaying;
     [Header("TripleDagger")]
     [SerializeField] private GameObject dagger2;
@@ -32,9 +34,22 @@ public class playerScript : MonoBehaviour
     [SerializeField] private GameObject dagger3;
     [SerializeField] private GameObject dagger3_spawn;
     [SerializeField] private GameObject daggers_effect;
+    [Header("KatanaSlashes")]
+    [SerializeField] private GameObject slash1_spawn;
+    [SerializeField] private GameObject slash1;
+    [SerializeField] private GameObject slash2_spawn;
+    [SerializeField] private GameObject slash2;
+    [SerializeField] private GameObject slash3_spawn;
+    [SerializeField] private GameObject slash3;
+    [Header("Spells")]
+    [SerializeField] private GameObject fireballVFX;
+    public GameObject fireWall;
+    [SerializeField] private GameObject waterballVFX;
+    [SerializeField] private GameObject earthSpell;
 
     private void Start()
     {
+        GetComponent<Animator>().applyRootMotion = true;
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -84,10 +99,9 @@ public class playerScript : MonoBehaviour
     {
         katana_scene.SetActive(false);
     }
-
-    public void KatanaChange()
+    public void UnActiveSceneWand()
     {
-        katana_scene.SetActive(true);
+        wand_scene.SetActive(false);
     }
 
     public void TripleDagger()
@@ -97,10 +111,39 @@ public class playerScript : MonoBehaviour
         GameObject daggersEffect = Instantiate(daggers_effect, dagger.transform.position, daggers_effect.transform.rotation);
     }
 
-    public void AnimEnd(string animBoolName)
+    public IEnumerator KatanaMultiSlash()
     {
-        GetComponent<Animator>().applyRootMotion = true;
-        GetComponent<Animator>().SetBool(animBoolName, false);
-        isAnimPlaying = false;
+        GameObject _slash1 = Instantiate(slash1, slash1.transform.position + slash1_spawn.transform.position, slash1.transform.rotation);
+        Destroy(_slash1, 1.5f);
+        yield return new WaitForSecondsRealtime(0.2f);
+        GameObject _slash2 = Instantiate(slash2, slash2.transform.position + slash2_spawn.transform.position, slash2.transform.rotation);
+        Destroy(_slash2, 1.3f);
+        yield return new WaitForSecondsRealtime(0.2f);
+        GameObject _slash3 = Instantiate(slash3, slash3.transform.position + slash3_spawn.transform.position, slash3.transform.rotation);
+        Destroy(_slash3, 1.1f);
+    }
+
+    public void SpawnFireball()
+    {
+        GameObject _fireball = Instantiate(fireballVFX, fireballVFX.transform.position + transform.position, fireballVFX.transform.rotation);
+        _fireball.GetComponent<fireball>().player = gameObject;
+    }
+
+    public void SpawnWaterball()
+    {
+        GameObject _waterball = Instantiate(waterballVFX, waterballVFX.transform.position + transform.position, waterballVFX.transform.rotation);
+        _waterball.GetComponent<waterball>().fireWall = fireWall;
+    }
+
+    public void SpawnEarthSpell()
+    {
+        GameObject _earthspell = Instantiate(earthSpell, earthSpell.transform.position, earthSpell.transform.rotation);
+        _earthspell.GetComponent<earthSpell>().training_dummy = training_dummy;
+    }
+
+    public void AnimEnd()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
